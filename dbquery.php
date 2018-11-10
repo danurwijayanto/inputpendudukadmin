@@ -15,7 +15,13 @@ function send_email_report_func() {
 	$content = ob_get_contents();
 	ob_end_clean();
 	$headers = array('Content-Type: text/html; charset=UTF-8');
-	wp_mail( "danurwijayanto@gmail.com", "Laporan Daftar List Penduduk", $content, $headers);
+	$sent = wp_mail( "mobinity.fx@gmail.com", "Laporan Daftar List Penduduk", $content, $headers);
+	if($sent) {
+		echo "Success";	
+	}//message sent!
+	else  {
+		echo "Fail";
+	}//message wasn't sent
 	// $dccCimbEnabled = (isset($_POST['dcc_cimb_enabled']))?$_POST['dcc_cimb_enabled']:0;
 	// $dccCimbSandboxEnabled = (isset($_POST['dcc_cimb_sandbox_enabled']))?$_POST['dcc_cimb_sandbox_enabled']:0;
 	
@@ -29,8 +35,8 @@ function send_email_report_func() {
     //     'foto' => 'test'
 	// ) );
 	
-	// wp_redirect(  admin_url( "admin.php?page=manage-data-penduduk" ) );
-	// exit;
+	wp_redirect(  admin_url( "admin.php?page=manage-data-penduduk" ) );
+	exit;
 }
 add_action( 'admin_post_send_email_report', 'send_email_report_func' );
 
