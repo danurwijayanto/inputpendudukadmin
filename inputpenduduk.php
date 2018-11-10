@@ -7,7 +7,7 @@ Version: 1.0
 Author: Noer
 Author URI: 
 */
-// add_action('admin_menu', 'Manage Data Penduduk');
+add_action('admin_menu', 'manage_data_penduduk');
 
 // include_once 'dbquery.php';
 // include_once 'pageTemplate.php';
@@ -49,3 +49,31 @@ function dcc_cimb_uninstall() {
 
 }
 register_uninstall_hook(__FILE__, 'dcc_cimb_uninstall'); 
+
+function manage_data_penduduk(){
+	add_menu_page( 'Manage Data Penduduk', 'Manage Data Penduduk', 'manage_options', 'manage-data-penduduk', 'manage_data_penduduk_func' );
+}
+
+function manage_data_penduduk_func(){
+global $wpdb;
+include_once("view/listpenduduk.php");
+// $settings = $wpdb->get_row('SELECT * FROM '.$wpdb->prefix.'dcc_cimb_conf limit 1');
+// echo "<h2>".__("CIMB Settings","dcc")."</h2>";
+//if ($settings) {
+	// echo "<form method='POST' action='admin-post.php'>";
+	// wp_nonce_field( 'dcc_cimb_settings_edit' ); 
+	// echo "<table class='option-table'><tr><td class='label'><strong>".__("Enable CIMB Payment Gateway:","dcc")." </strong></td><td><input type='checkbox' name='dcc_cimb_enabled' ";
+	// if ( isset($settings->plugin_status) && $settings->plugin_status ) { echo "checked "; } 
+	// echo "value='1'> Yes</td></tr>
+	// <tr><td class='label'><strong>".__("Enable Sandbox mode","dcc")."</strong></td><td><input type='checkbox' name='dcc_cimb_sandbox_enabled' ";
+	// if ( isset($settings->sandbox_status) && $settings->sandbox_status ) { echo "checked "; } 
+	// echo "value='1'> Yes</td></tr>
+	// <tr><td class='label'><strong>".__("Merchant Account Number:","dcc")." </strong></td><td><input type='type' name='merchant_acc_code' value='$settings->merchant_acc_no' class='regular-text' /></td></tr>
+	// <tr><td class='label'><strong>".__("Txn Password:","dcc")." </strong></td><td><input type='type' name='txn_pass' value='$settings->txn_password' class='regular-text' /></td></tr>
+	// <tr><td class='label'><strong>".__("Company Code:","dcc")." </strong></td><td><input type='type' name='company_code' value='$settings->company_code' class='regular-text' /></td></tr><br>
+	
+	// <input type='hidden' name='action' value='dcc_cimb_settings_edit' /></table>
+	// <br><input type='submit' value='".__("Save changes","dcc")."' class='button button-primary' class='button button-primary'>
+	// </form>";
+//}
+}
