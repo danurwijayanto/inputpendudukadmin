@@ -15,7 +15,8 @@ function send_email_report_func() {
 	$content = ob_get_contents();
 	ob_end_clean();
 	// $headers = array('Content-Type: text/html; charset=UTF-8');
-	$headers = 'From:inputdata@pasopati.org' . "\r\n"; // Sender's Email
+	$headers[] = 'Content-Type: text/html; charset=UTF-8';
+	$headers[] = 'From:inputdata@pasopati.org' . "\r\n"; // Sender's Email
 	$sent = wp_mail( "mobinity.fx@gmail.com", "Laporan Daftar List Penduduk", $content, $headers);
 	if($sent) {
 		echo "Success";	
