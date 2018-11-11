@@ -12,7 +12,8 @@ add_action('admin_menu', 'manage_data_penduduk');
 include_once 'dbquery.php';
 // include_once 'pageTemplate.php';
 
-function dcc_cimb_install() {
+function inputpenduduk_install() {
+	register_uninstall_hook(__FILE__, 'inputpenduduk_uninstall'); 
 	global $wpdb;
 	
 	$tabel_penduduk = $wpdb->prefix . "penduduk";
@@ -25,8 +26,9 @@ function dcc_cimb_install() {
 		email VARCHAR(50) DEFAULT '' NOT NULL,
 		telephone VARCHAR(20) DEFAULT '' NOT NULL,
 		tempat_lahir VARCHAR(30) DEFAULT '' NOT NULL,
-		jenis_kelamin int DEFAULT 0 NOT NULL,
-		golongan_darah varchar(3) DEFAULT 0 NOT NULL,
+		tanggal_lahir DATE NOT NULL,
+		jenis_kelamin varchar(12) DEFAULT '' NOT NULL,
+		golongan_darah varchar(3) DEFAULT '' NOT NULL,
         alamat varchar(150) DEFAULT '' NOT NULL,
         foto varchar(150) DEFAULT '' NOT NULL,
         UNIQUE KEY nik (nik)
@@ -38,10 +40,10 @@ function dcc_cimb_install() {
 
 	
 }
-register_activation_hook( __FILE__, 'dcc_cimb_install' );
+register_activation_hook( __FILE__, 'inputpenduduk_install' );
 
 
-function dcc_cimb_uninstall() {
+function inputpenduduk_uninstall() {
 	global $wpdb;
 
 	$table_name = $wpdb->prefix . "penduduk";
@@ -49,7 +51,6 @@ function dcc_cimb_uninstall() {
 	$wpdb->query("DROP TABLE IF EXISTS $table_name");
 
 }
-register_uninstall_hook(__FILE__, 'dcc_cimb_uninstall'); 
 
 function manage_data_penduduk(){
 	add_menu_page( 'Manage Data Penduduk', 'Manage Data Penduduk', 'manage_options', 'manage-data-penduduk', 'manage_data_penduduk_func' );

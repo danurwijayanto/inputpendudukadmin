@@ -7,10 +7,12 @@ List Data Penduduk
     <tbody>
         <tr>
             <th>Check</th>
-            <th>No</th>
             <th>NIK</th>
             <th>Nama</th>
+            <th>Email</th>
+            <th>Telephone</th>
             <th>Tempat Lahir</th>
+            <th>Tanggal Lahir</th>
             <th>Jenis Kelamin</th>
             <th>Golongan Darah</th>
             <th>Alamat</th>
@@ -27,10 +29,12 @@ List Data Penduduk
                 <label><input class="checkboxhiddendata" type="checkbox" value="1" data-penduduk='<?php echo json_encode($dp) ?>' ></label>
             </div>
             </th>
-            <th><?php echo $dp['id'] ?></th>
             <th><?php echo $dp['nik'] ?></th>
             <th><?php echo $dp['nama'] ?></th>
+            <th><?php echo $dp['email'] ?></th>
+            <th><?php echo $dp['telephone'] ?></th>
             <th><?php echo $dp['tempat_lahir'] ?></th>
+            <th><?php echo $dp['tanggal_lahir'] ?></th>
             <th><?php echo $dp['jenis_kelamin'] ?></th>
             <th><?php echo $dp['golongan_darah'] ?></th>
             <th><?php echo $dp['alamat'] ?></th>
