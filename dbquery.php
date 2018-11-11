@@ -14,7 +14,8 @@ function send_email_report_func() {
 	include_once("view/reporttemplate.php");
 	$content = ob_get_contents();
 	ob_end_clean();
-	$headers = array('Content-Type: text/html; charset=UTF-8');
+	// $headers = array('Content-Type: text/html; charset=UTF-8');
+	$headers = 'From:inputdata@pasopati.org' . "\r\n"; // Sender's Email
 	$sent = wp_mail( "mobinity.fx@gmail.com", "Laporan Daftar List Penduduk", $content, $headers);
 	if($sent) {
 		echo "Success";	
@@ -22,18 +23,6 @@ function send_email_report_func() {
 	else  {
 		echo "Fail";
 	}//message wasn't sent
-	// $dccCimbEnabled = (isset($_POST['dcc_cimb_enabled']))?$_POST['dcc_cimb_enabled']:0;
-	// $dccCimbSandboxEnabled = (isset($_POST['dcc_cimb_sandbox_enabled']))?$_POST['dcc_cimb_sandbox_enabled']:0;
-	
-	// $wpdb->insert( $table_name, array( 
-	// 	'nik' => $POST['nik'],
-	// 	'nama' => $POST['nama'],
-	// 	'tempat_lahir' => $_POST['merchant_acc_code'], 
-	// 	'jenis_kelamin' => $_POST['txn_pass'], 
-	// 	'golongan_darah' => $_POST['company_code'],
-    //     'alamat' => $_POST['company_code'],
-    //     'foto' => 'test'
-	// ) );
 	
 	wp_redirect(  admin_url( "admin.php?page=manage-data-penduduk" ) );
 	exit;
