@@ -20,15 +20,16 @@ function dcc_cimb_install() {
 	$charset_collate = $wpdb->get_charset_collate();
 
 	$penduduk_atribut = "CREATE TABLE $tabel_penduduk (
-		id INT NOT NULL AUTO_INCREMENT,
-		nik VARCHAR(30) DEFAULT '' NOT NULL,
+		nik VARCHAR(30) NOT NULL,
 		nama VARCHAR(50) DEFAULT '' NOT NULL,
+		email VARCHAR(50) DEFAULT '' NOT NULL,
+		telephone VARCHAR(20) DEFAULT '' NOT NULL,
 		tempat_lahir VARCHAR(30) DEFAULT '' NOT NULL,
 		jenis_kelamin int DEFAULT 0 NOT NULL,
 		golongan_darah varchar(3) DEFAULT 0 NOT NULL,
         alamat varchar(150) DEFAULT '' NOT NULL,
         foto varchar(150) DEFAULT '' NOT NULL,
-        UNIQUE KEY id (id)
+        UNIQUE KEY nik (nik)
 	) $charset_collate;"; 
 
 	require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
