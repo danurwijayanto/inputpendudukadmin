@@ -10,7 +10,8 @@ List Data Penduduk
             <th>NIK</th>
             <th>Nama</th>
             <th>Email</th>
-            <th>Telephone</th>
+            <th>Telp Rumah</th>
+            <th>No HP</th>
             <th>Tempat Lahir</th>
             <th>Tanggal Lahir</th>
             <th>Jenis Kelamin</th>
@@ -32,7 +33,8 @@ List Data Penduduk
             <th><?php echo $dp['nik'] ?></th>
             <th><?php echo $dp['nama'] ?></th>
             <th><?php echo $dp['email'] ?></th>
-            <th><?php echo $dp['telephone'] ?></th>
+            <th><?php echo $dp['telp_rumah'] ?></th>
+            <th><?php echo $dp['no_hp'] ?></th>
             <th><?php echo $dp['tempat_lahir'] ?></th>
             <th><?php echo $dp['tanggal_lahir'] ?></th>
             <th><?php echo $dp['jenis_kelamin'] ?></th>

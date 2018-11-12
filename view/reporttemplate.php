@@ -4,7 +4,10 @@ List Data Penduduk
         <tr>
             <th>NIK</th>
             <th>Nama</th>
+            <th>Telp Rumah</th>
+            <th>No HP</th>
             <th>Tempat Lahir</th>
+            <th>Tanggal Lahir</th>
             <th>Jenis Kelamin</th>
             <th>Golongan Darah</th>
             <th>Alamat</th>
@@ -17,7 +20,8 @@ List Data Penduduk
         <tr>
             <th><?php echo $pl->nik ?></th>
             <th><?php echo $pl->nama ?></th>
-            <th><?php echo $pl->telephone ?></th>
+            <th><?php echo $pl->tlp_rumah ?></th>
+            <th><?php echo $pl->no_hp ?></th>
             <th><?php echo $pl->tempat_lahir ?></th>
             <th><?php echo $pl->tanggal_lahir ?></th>
             <th><?php echo $pl->jenis_kelamin ?></th>
