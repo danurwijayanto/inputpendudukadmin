@@ -20,7 +20,7 @@ List Data Penduduk
         <tr>
             <th><?php echo $pl->nik ?></th>
             <th><?php echo $pl->nama ?></th>
-            <th><?php echo $pl->tlp_rumah ?></th>
+            <th><?php echo $pl->telp_rumah ?></th>
             <th><?php echo $pl->no_hp ?></th>
             <th><?php echo $pl->tempat_lahir ?></th>
             <th><?php echo $pl->tanggal_lahir ?></th>
