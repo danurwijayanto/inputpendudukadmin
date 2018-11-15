@@ -10,14 +10,15 @@ List Data Penduduk
             <th>NIK</th>
             <th>Nama</th>
             <th>Email</th>
-            <th>Telp Rumah</th>
+            <!-- <th>Telp Rumah</th> -->
             <th>No HP</th>
             <th>Tempat Lahir</th>
             <th>Tanggal Lahir</th>
             <th>Jenis Kelamin</th>
-            <th>Golongan Darah</th>
+            <!-- <th>Golongan Darah</th> -->
             <th>Alamat</th>
             <th>Foto</th>
+            <th>Input Data</th>
             <th>Action</th>
         </tr>
         <?php
@@ -33,13 +34,14 @@ List Data Penduduk
             <th><?php echo $dp['nik'] ?></th>
             <th><?php echo $dp['nama'] ?></th>
             <th><?php echo $dp['email'] ?></th>
-            <th><?php echo $dp['telp_rumah'] ?></th>
+            <!-- <th><?php //echo $dp['telp_rumah'] ?></th> -->
             <th><?php echo $dp['no_hp'] ?></th>
             <th><?php echo $dp['tempat_lahir'] ?></th>
             <th><?php echo $dp['tanggal_lahir'] ?></th>
             <th><?php echo $dp['jenis_kelamin'] ?></th>
-            <th><?php echo $dp['golongan_darah'] ?></th>
+            <!-- <th><?php //echo $dp['golongan_darah'] ?></th> -->
             <th><?php echo $dp['alamat'] ?></th>
+            <th><?php echo $dp['created_at'] ?></th>
             <th><?php echo $datafoto ?></th>
             <th></th>
         </tr>
