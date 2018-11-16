@@ -10,6 +10,7 @@ Author URI:
 add_action('admin_menu', 'manage_data_penduduk');
 
 include_once 'dbquery.php';
+require 'vendor/autoload.php';
 // include_once 'pageTemplate.php';
 
 function inputpenduduk_install() {

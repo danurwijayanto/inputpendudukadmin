@@ -1,7 +1,8 @@
 <?php
+    use Carbon\Carbon;
     $datapenduduk = $wpdb->get_results('SELECT * FROM '.$wpdb->prefix.'penduduk', 'ARRAY_A');
     
-    ?>
+?>
 List Data Penduduk
 <table class="form-table striped">
     <tbody>
@@ -41,8 +42,8 @@ List Data Penduduk
             <th><?php echo $dp['jenis_kelamin'] ?></th>
             <!-- <th><?php //echo $dp['golongan_darah'] ?></th> -->
             <th><?php echo $dp['alamat'] ?></th>
-            <th><?php echo $dp['created_at'] ?></th>
             <th><?php echo $datafoto ?></th>
+            <th><?php echo Carbon::createFromFormat('Y-m-d H:i:s', $dp['created_at'] ,'Asia/Jakarta')->format('d M Y') ?></th>
             <th></th>
         </tr>
         <?php
