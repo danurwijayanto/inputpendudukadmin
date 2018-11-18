@@ -30,6 +30,12 @@ function send_email_report_func() {
 }
 add_action( 'admin_post_send_email_report', 'send_email_report_func' );
 
+function print_data_func() {
+	include_once("view/printdatapenduduk.php");
+	
+}
+add_action( 'admin_post_print_data_func', 'print_data_func' );
+
 
 
 ?>
